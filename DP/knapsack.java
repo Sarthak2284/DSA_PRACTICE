@@ -4,7 +4,6 @@ import java.util.*;
 
 class knapsack {
     static int t[][];
-
     public static int knapsack_memo(int[] wt, int[] val, int W, int n) {
         if (n == 0 || W == 0)
             return 0;
@@ -33,8 +32,10 @@ class knapsack {
         }
         int W = sc.nextInt();
         t = new int[n + 1][W + 1];
-        for (int[] row : t)
+        for (int[] row : t) {
             Arrays.fill(row, -1);
+        }
+        System.out.println(knapSack_reccursive(wt, val, W, n));
         System.out.println(knapsack_memo(wt, val, W, n));
         sc.close();
     }
